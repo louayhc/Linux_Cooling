@@ -7,6 +7,10 @@ PID_FILE="/tmp/power_toggle.pid"
 
 # The main toggle function
 toggle_loop() {
+    powerprofilesctl set balanced
+    sleep 20
+    powerprofilesctl set performance
+    sleep 6
     while true; do
         powerprofilesctl set balanced
         sleep 1.5
